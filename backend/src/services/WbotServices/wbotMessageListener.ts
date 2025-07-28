@@ -2792,7 +2792,8 @@ const filterMessages = (msg: WAMessage): boolean => {
       WAMessageStubType.E2E_DEVICE_CHANGED,
       WAMessageStubType.E2E_IDENTITY_CHANGED,
       WAMessageStubType.CIPHERTEXT
-    ].includes(msg.messageStubType as unknown)
+      //@ts-ignore
+    ].includes(msg.messageStubType as any)
   )
     return false;
 
