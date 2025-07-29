@@ -17,6 +17,6 @@ module.exports = {
     max: 10,
     min: 0,
     acquire: 50000,
-    idle: 20000,
-  },
+    idle: 20000
+  }
 };

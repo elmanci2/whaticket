@@ -176,7 +176,7 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     // width: "80%",
     height: "auto",
-    maxHeight: 43,
+    maxHeight: 73,
     maxWidth: 180,
     [theme.breakpoints.down("sm")]: {
       width: "auto",
@@ -435,7 +435,7 @@ const LoggedInLayout = ({ children, themeToggle }) => {
             noWrap
             className={classes.title}
           >
-            <img style={{}} src={logo} className={classes.logo} alt="logo" />
+            <img style={{maxHeight:40}} src={logo} className={classes.logo} alt="logo" />
           </Typography>
 
 

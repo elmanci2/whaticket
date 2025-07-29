@@ -35,7 +35,8 @@ body {
 }
 
 .img-login {
-  width: 100%;
+  width:100%;
+  height: auto;
   max-width: 462px;
 }
 .container-footer {
@@ -57,20 +58,19 @@ body {
   justify-content: flex-end;
   margin-right: 5px;
   margin-top: 5px;
-  color: #285ec9;
+  color: #3C4E73;
 }
 .link-recovery {
-  text-decoration-color: rgb(52, 137, 255);
-  text-emphasis-color: rgb(52, 137, 255);
-  -webkit-text-fill-color: rgb(52, 137, 255);
-  -webkit-text-stroke-color: rgb(52, 137, 255);
+  text-decoration-color:#3C4E73;
+  text-emphasis-color:#3C4E73;
+  -webkit-text-fill-color:#3C4E73;
+  -webkit-text-stroke-color:#3C4E73;
   text-decoration: none;
 }
 .link-recovery:hover {
   text-decoration: underline;
 }
 .container-right {
-  background-image: url(../../assets/bg-login.png);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -127,7 +127,7 @@ body {
 }
 .link-enter {
   align-items: center;
-  background-color: rgb(52, 137, 255);
+  background-color: #3C4E73;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
     rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
   cursor: pointer;
@@ -159,20 +159,20 @@ body {
 }
 .termo {
   text-decoration: none;
-  text-decoration-color: rgb(52, 137, 255);
-  text-emphasis-color: rgb(52, 137, 255);
-  -webkit-text-fill-color: rgb(52, 137, 255);
-  -webkit-text-stroke-color: rgb(52, 137, 255);
+  text-decoration-color: #3C4E73;
+  text-emphasis-color: #3C4E73;
+  -webkit-text-fill-color: #3C4E73;
+  -webkit-text-stroke-color: #3C4E73;
 }
 .termo:hover {
   text-decoration: underline;
 }
 .politica {
   text-decoration: none;
-  text-decoration-color: rgb(52, 137, 255);
-  text-emphasis-color: rgb(52, 137, 255);
-  -webkit-text-fill-color: rgb(52, 137, 255);
-  -webkit-text-stroke-color: rgb(52, 137, 255);
+  text-decoration-color: #3C4E73;
+  text-emphasis-color: #3C4E73;
+  -webkit-text-fill-color: #3C4E73;
+  -webkit-text-stroke-color: #3C4E73;
 }
 .politica:hover {
   text-decoration: underline;

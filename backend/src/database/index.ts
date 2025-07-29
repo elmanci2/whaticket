@@ -84,9 +84,79 @@ const models = [
   FilesOptions,
   Prompt,
   QueueIntegrations,
-  BaileysKeys,
+  BaileysKeys
 ];
+
+export async function createInitialData() {
+  try {
+    await sequelize.sync({ force: true });
+
+    // 👉 Crear plan "Enterprise"
+    const [plan] = await Plan.findOrCreate({
+      where: { name: "Enterprise" },
+      defaults: {
+        users: 999,
+        connections: 999,
+        queues: 999,
+        value: 0,
+        useSchedules: true,
+        useCampaigns: true,
+        useInternalChat: true,
+        useExternalApi: true,
+        useKanban: true,
+        useOpenAi: true,
+        useIntegrations: true,
+        isPublic: false
+      }
+    });
+    console.log("✅ Plan cargado:", plan.name);
+
+    // 👉 Crear compañía principal (ID: 1)
+    const [company, createdCompany] = await Company.findOrCreate({
+      where: { id: 1 },
+      defaults: {
+        name: "Empresa Principal",
+        phone: "0000000000",
+        email: "empresa@principal.com",
+        status: true,
+        dueDate: "2099-12-31", // Asegura una fecha válida y futura
+        recurrence: "mensal", // mensual o anual, como lo manejes tú
+        schedules: [],
+        planId: plan.id
+      }
+    });
+
+    if (createdCompany) {
+      console.log("✅ Compañía creada:", company.name);
+    } else {
+      console.log("⚠️  Compañía ya existente:", company.name);
+    }
+
+    // 👉 Crear superusuario
+    const [user, createdUser] = await User.findOrCreate({
+      where: { email: "M@marxmarquinez.com" },
+      defaults: {
+        name: "marx marquinez",
+        email: "M@marxmarquinez.com",
+        password: "America000/",
+        profile: "admin",
+        super: true,
+        online: false,
+        companyId: company.id
+      }
+    });
+
+    if (createdUser) {
+      console.log("✅ Superusuario creado:", user.email);
+    } else {
+      console.log("⚠️  El superusuario ya existe:", user.email);
+    }
+  } catch (err) {
+    console.error("❌ Error al crear datos iniciales:", err);
+  }
+}
 
 sequelize.addModels(models);
 
+createInitialData();
 export default sequelize;

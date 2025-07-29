@@ -2,7 +2,6 @@ node_modules
 public/*
 dist
 !public/.gitkeep
-.env
 .env.test
 logs/*
 package-lock.json

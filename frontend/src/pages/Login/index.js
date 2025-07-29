@@ -114,7 +114,7 @@ const Login = () => {
           <p>
             Copyright ©{" "}
             <a href={"#"} target={"_blank"}>
-              Equipechat{""}
+              Gpyme{""}
             </a>{" "}
             2024{" "}
           </p>
