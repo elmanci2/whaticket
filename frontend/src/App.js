@@ -49,7 +49,7 @@ const App = () => {
 
             setPrimaryColorLight: (color) => {
                 if (!color || !color.startsWith("#")) {
-                    color = "#0000FF";
+                    color = "#3C4E73";
                 }
                 setPrimaryColorLight(color);
             },
@@ -125,7 +125,7 @@ const App = () => {
 
               palette: {
                  type: mode,
-                 primary: { main: "#0000FF" },
+                 primary: { main: "#3C4E73" },
                  textPrimary: mode === "light" ? "#0000FF" : "#FFFFFF",
                  borderPrimary: mode === "light" ? "#0000FF" : "#FFFFFF",
                  dark: { main: mode === "light" ? "#333333" : "#F3F3F3" },
