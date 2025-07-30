@@ -1,3 +1,7 @@
+/* eslint-disable object-shorthand */
+/* eslint-disable func-names */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import "./bootstrap";
 import "reflect-metadata";
 import "express-async-errors";
@@ -26,11 +30,17 @@ app.set("queues", {
 app.use(bodyParser.json({ limit: "5mb" }));
 app.use(bodyParser.urlencoded({ limit: "5mb", extended: true }));
 
+const allowedOrigins = ["http://localhost:3000", "https://crm.gestionpyme.co"];
+
 app.use(
   cors({
     credentials: true,
-    origin: (origin, callback) => {
-      callback(null, true); // Permitir cualquier origen dinámicamente
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
     }
   })
 );
